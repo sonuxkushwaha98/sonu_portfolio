@@ -1,38 +1,473 @@
-.App {
-  text-align: center;
+.navbar {
+  height: 60px;
+  width: 100%;
+  background: #58a6f9;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#tsparticles canvas {
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.home {
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mobile-menu {
+  display: none;
+}
+
+.nav-content {
+  display: flex;
+  gap: 10vw;
+}
+
+.navbar li {
+  display: block;
+  text-decoration: none;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.navbar li :hover {
+  color: #040079;
+}
+
+.logo {
+  position: absolute;
+  left: 25px;
+}
+
+.aboutMe {
+  height: 150px;
+  width: 500px;
+  margin: 20px;
+  font-size: larger;
+}
+
+.Myname {
+  color: #58a6f9;
+}
+
+.web-dev-img {
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  top: 96px;
+  right: 20px;
+  background-size: contain;
+}
+
+.resumeBtn {
+  height: 50px;
+  width: 80px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 20px;
+  background-color: #58a6f9;
+  /* position: relative;
+  top: 30vh;
+  left: 8vw; */
+}
+
+.resumeBtn a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#aboutPage {
+  display: flex;
+}
+
+.Aboutleft {
+  width: 50vw;
+}
+
+.Aboutright {
+  width: 50vw;
+}
+
+.About {
+  margin: 30px;
+}
+
+.aboutContainer {
+  height: 115px;
+  width: 500px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutRightContainer {
+  margin: 30px;
+}
+
+.Aboutright-content {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.MusicPlayer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.musicImg {
+  height: 200px;
+  width: 400px;
+  border-radius: 8px;
+}
+
+.btn {
+  border: 1px solid #000000;
+  background-color: #58a6f9;
+  border-radius: 3px;
+  height: 30px;
+}
+
+.btn a {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1vh;
+  color: #000000;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.homeBtn {
+  height: 40px;
+  border: 1px solid #000000;
+  background-color: #58a6f9;
+  border-radius: 3px;
+  margin-top: 30px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  height: 450px;
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  box-shadow: 2px 4px 10px 0px #3a3a3a;
+}
+
+.form-container input {
+  height: 30px;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-container textarea {
+  height: 100px;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-container button {
+  height: 40px;
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: #58a6f9;
+  color: #000000;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10vw;
+  position: fixed;
+  bottom: 0px;
+  height: 100px;
+  width: 100%;
+}
+
+.linkedin {
+  font-size: xxx-large;
+}
+
+.social-media a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.mobileMenu-container {
+  height: 30vh;
+  width: 40vw;
+  background-color: #58a6f9cf;
+  position: absolute;
+  right: 0px;
+  z-index: 1;
+  box-shadow: 5px 5px 13px 4px dimgrey;
+}
+
+.mobileMenu-container {
+  display: none;
+  /* Hide by default */
+}
+
+.mobileMenu-container.show {
+  display: block;
+  /* Show when the state is true */
+  /* transition: all 1s ease-out; */
+  ;
+}
+
+.mobileMenu-container.hide {
+  display: none;
+  /*Hide when the state is false  */
+}
+
+.mobileMenu-content li {
+  display: flex;
+  text-decoration: none;
+  padding: 2vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mobileMenu-content li:hover {
+  background-color: #58e3f9;
+}
+
+.mobileMenu-content li a {
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+
+}
+
+.mobileMenu-content li a:hover {
+  text-decoration: none;
+  color: #000000;
+
+}
+
+.popUp {
+  height: 45vh;
+  width: 30vw;
+  background-color: #242323;
+  margin: 5vh;
+  display: none;
+  z-index: 1;
+  position: relative;
+  color: #ffffff;
+
+}
+
+.popUp p {
+  margin-left: 20px;
+  width: 90%;
+}
+
+.popUp span {
+  border: 1px solid white;
+  margin-left: 5px;
+  padding: 3px 8px;
+  border-radius: 15px;
+}
+
+.technology {
+  margin: 20px;
+}
+
+.popUp.show {
+  display: block;
+  bottom: 20vh;
+  left: 10vw;
+  border-radius: 2vh;
+}
+
+.popUp.hide {
+  display: none;
+}
+
+.popUpCross {
+  margin-top: 10px;
+  margin-right: 10px;
+  position: relative;
+  left: 28vw;
+}
+
+.mernstackIcon {
+  display: flex;
+  gap: 10px;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-size: xxx-large;
+}
+
+.mernstack {
+  display: flex;
+  gap: 10px;
+  margin-left: 9px;
+  margin-top: 10px;
+}
+
+.mernstack span {
+  margin-left: 20px;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    height: 60px;
+    width: 100%;
+    background: #58a6f9;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    font-size: large;
   }
-  to {
-    transform: rotate(360deg);
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .aboutMe {
+    height: 100px;
+    width: 65%;
+    margin: 20px;
+    font-size: small;
+  }
+
+  .web-dev-img {
+    height: 300px;
+    width: 300px;
+    position: relative;
+    top: 15vh;
+  }
+
+  .nav-content {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .resumeBtn {
+    position: relative;
+    top: 20vh;
+  }
+
+  .social-media {
+    display: block;
+    position: fixed;
+    top: 25vh;
+    width: 100%;
+  }
+
+  .popUpCross {
+    margin-top: 10px;
+    margin-right: 10px;
+    position: relative;
+    left: 63vw;
+    border-radius: 1vh;
+  }
+
+  .popUp.show {
+    display: block;
+    bottom: 32vh;
+    left: 10vw;
+    border-radius: 2vh;
+  }
+
+  .popUp {
+    height: 40vh;
+    width: 70vw;
+    background-color: #242323;
+    margin: 5vh;
+    display: none;
+    z-index: 1;
+    position: absolute;
+  }
+  .technology {
+    display: flex;
+    width: 90%;
+    margin: 6px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 1646px) {
+  #aboutPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .technology {
+    display: flex;
+    width: 90%;
+    margin: 6px;
+    font-size: 10px;
+  }
+
+  .Aboutleft {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Aboutright {
+    width: 100vw;
+  }
+
+  .aboutContainer {
+    width: 85vw;
+    height: 17vh;
+  }
+
+  .musicImg {
+    width: 85vw;
+    height: 43vh;
+  }
+
+  .form-container {
+    width: 85vw;
+    height: 60vh;
   }
 }
