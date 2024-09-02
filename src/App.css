@@ -41,7 +41,57 @@
 .navbar li :hover {
   color: #040079;
 }
-
+.signup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logincontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 48%;
+  border: 1px solid #000000;
+  padding: 1em;
+  border-radius: 0.5em;
+  gap: 1em;
+  margin-top: 10%;
+}
+.signup form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+  border: 1px solid #000000;
+  padding: 1em;
+  border-radius: 0.5em;
+  gap: 1em;
+}
+.inputbox {
+  border: 1px solid lightgrey;
+  padding: 1.5em;
+  width: 75%;
+  border-radius: 0.4em;
+}
+.inputBtn {
+  padding: 1em;
+  width: 20%;
+  border: 1px solid #000000;
+  border-radius: 0.4em;
+  margin-top: 1em;
+  background-color: #58e3f9;
+}
 .logo {
   position: absolute;
   left: 25px;
@@ -87,6 +137,8 @@
 
 #aboutPage {
   display: flex;
+  margin-top: 15%;
+  margin-bottom: 100px;
 }
 
 .Aboutleft {
@@ -115,6 +167,7 @@
 
 .aboutRightContainer {
   margin: 30px;
+  margin-top: 10vh;
 }
 
 .Aboutright-content {
@@ -134,8 +187,8 @@
 }
 
 .musicImg {
-  height: 200px;
-  width: 400px;
+  height: 100%;
+  width: 100%;
   border-radius: 8px;
 }
 
@@ -214,20 +267,24 @@
   justify-content: center;
   align-items: center;
   gap: 10vw;
-  position: fixed;
+  position: relative;
   bottom: 0px;
   height: 100px;
   width: 100%;
 }
 
 .linkedin {
-  font-size: xxx-large;
+  font-size: xx-large;
 }
-
-.social-media a {
-  text-decoration: none;
+.linkedin a {
   color: #000000;
 }
+.linkedin a:hover {
+  color: #5d5d5d;
+  font-size: 35px;
+}
+
+
 
 .mobileMenu-container {
   height: 30vh;
@@ -298,15 +355,103 @@
   width: 90%;
 }
 
-.popUp span {
+.tech_name {
   border: 1px solid white;
-  margin-left: 5px;
+  margin-left: 0.5em;
+  margin-bottom: 0.75em;
   padding: 3px 8px;
   border-radius: 15px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mernstack-popup {
+  display: none;
+}
+
+.mernstack-popup.show {
+  display: block;
+}
+
+.mernstack-popup.hide {
+  display: none;
+}
+
+.mongodbpopup {
+  color: #000000;
+  background-color: #0ef30e;
+  height: 22px;
+  width: 75px;
+  position: absolute;
+  margin: 0.5em;
+  padding: 2px 8px;
+  border-radius: 16px;
+  left: 16%;
+  box-shadow: 2px 8px 5px #000000;
+}
+
+.expresspopup {
+  color: #000000;
+  background-color: #ffffff;
+  height: 22px;
+  width: 75px;
+  position: absolute;
+  margin: 0.5em;
+  padding: 2px 8px;
+  border-radius: 16px;
+  left: 34%;
+  box-shadow: 2px 8px 5px #000000;
+}
+
+.reactpopup {
+  color: #000000;
+  background-color: #08efff;
+  height: 22px;
+  width: 60px;
+  position: absolute;
+  margin: 0.5em;
+  padding: 2px 8px;
+  border-radius: 16px;
+  left: 51%;
+  box-shadow: 2px 8px 5px #000000;
+}
+
+.nodepopup {
+  color: #000000;
+  background-color: #029c02;
+  height: 22px;
+  width: 61px;
+  position: absolute;
+  margin: 0.5em;
+  padding: 2px 8px;
+  border-radius: 16px;
+  left: 68%;
+  box-shadow: 2px 8px 5px #000000;
+}
+
+.alphabate {
+  border: 1px solid white;
+  margin-left: 5px;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mongodb {
+  color: #0ef30e;
+}
+
+.react {
+  color: #58e3f9;
 }
 
 .technology {
-  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .popUp.show {
@@ -314,6 +459,8 @@
   bottom: 20vh;
   left: 10vw;
   border-radius: 2vh;
+  height: 70%;
+  width: 40vw;
 }
 
 .popUp.hide {
@@ -324,26 +471,64 @@
   margin-top: 10px;
   margin-right: 10px;
   position: relative;
-  left: 28vw;
+  left: 34vw;
 }
 
 .mernstackIcon {
   display: flex;
-  gap: 10px;
+  gap: 50px;
   margin-top: 50px;
   margin-left: 20px;
   font-size: xxx-large;
+  justify-content: center;
 }
 
 .mernstack {
   display: flex;
-  gap: 10px;
-  margin-left: 9px;
+  gap: 50px;
   margin-top: 10px;
+  justify-content: center;
 }
 
 .mernstack span {
   margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: #505050;
+}
+footer{
+  height: 20vh;
+  width: 100%;
+  background-color: #d5d5d56e;
+}
+.footer-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer p{
+  font-weight: 600;
+}
+.footer-socila-media{
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.footerSocialMediaContent{
+  font-size: x-large ;
+}
+.footerSocialMediaContent a{
+  color: #000000;
+}
+.footerSocialMediaContent a:hover{
+  color: #3d3d3d;
+  font-size: 27px;
 }
 
 @media (max-width: 800px) {
@@ -392,25 +577,32 @@
     top: 20vh;
   }
 
+  .mernstackIcon {
+    margin-left: 0px;
+  }
+
   .social-media {
     display: block;
-    position: fixed;
-    top: 25vh;
-    width: 100%;
+    position: absolute;
+    bottom: 43vh;
+    right: 2px;
+    width: 9%;
   }
 
   .popUpCross {
     margin-top: 10px;
     margin-right: 10px;
     position: relative;
-    left: 63vw;
+    left: 90%;
     border-radius: 1vh;
   }
 
   .popUp.show {
+    width: 90%;
+    height: 80%;
     display: block;
-    bottom: 32vh;
-    left: 10vw;
+    bottom: 23vh;
+    left: -11px;
     border-radius: 2vh;
   }
 
@@ -423,26 +615,77 @@
     z-index: 1;
     position: absolute;
   }
+
   .technology {
-    display: flex;
     width: 90%;
     margin: 6px;
     font-size: 10px;
   }
+
+  .mongodbpopup {
+    color: #000000;
+    background-color: #0ef30e;
+    height: 22px;
+    width: 75px;
+    position: absolute;
+    margin: 0.5em;
+    padding: 2px 8px;
+    border-radius: 16px;
+    left: 0%;
+    box-shadow: 2px 8px 5px #000000;
+  }
+
+  .expresspopup {
+    color: #000000;
+    background-color: #ffffff;
+    height: 22px;
+    width: 75px;
+    position: absolute;
+    margin: 0.5em;
+    padding: 2px 8px;
+    border-radius: 16px;
+    left: 22%;
+    box-shadow: 2px 8px 5px #000000;
+  }
+
+  .reactpopup {
+    color: #000000;
+    background-color: #08efff;
+    height: 22px;
+    width: 60px;
+    position: absolute;
+    margin: 0.5em;
+    padding: 2px 8px;
+    border-radius: 16px;
+    left: 47%;
+    box-shadow: 2px 8px 5px #000000;
+  }
+
+  .nodepopup {
+    color: #000000;
+    background-color: #029c02;
+    height: 22px;
+    width: 61px;
+    position: absolute;
+    margin: 0.5em;
+    padding: 2px 8px;
+    border-radius: 16px;
+    left: 73%;
+    box-shadow: 2px 8px 5px #000000;
+  }
 }
 
-@media (max-width: 1646px) {
+@media (max-width: 1200px) {
   #aboutPage {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .technology {
-    display: flex;
-    width: 90%;
-    margin: 6px;
-    font-size: 10px;
+
+  .popUp.show {
+    display: block;
+    bottom: 0vh;
+    border-radius: 2vh;
   }
 
   .Aboutleft {
@@ -450,6 +693,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 130px;
   }
 
   .Aboutright {
@@ -458,16 +702,34 @@
 
   .aboutContainer {
     width: 85vw;
-    height: 17vh;
+    height: 25vh;
+    font-size: 14px;
   }
 
-  .musicImg {
-    width: 85vw;
-    height: 43vh;
-  }
 
   .form-container {
-    width: 85vw;
+    width: 55vw;
     height: 60vh;
   }
+
+  .mongodbpopup {
+    left: -1%;
+  }
+
+  .expresspopup {
+    left: 30%;
+  }
+
+  .reactpopup {
+    left: 53%;
+  }
+
+  .nodepopup {
+    left: 74%;
+  }
+}
+@media (max-height: 1100px){
+  .popUp.show {
+    height: 62%;
+}
 }
