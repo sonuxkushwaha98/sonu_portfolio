@@ -8,7 +8,7 @@ let Login=()=>{
    
     const handelLogin= async()=>{
         console.log(email,password);
-        let result = await fetch('https://portfolio-backend-phi-seven.vercel.app//login', {
+        let result = await fetch('https://portfolio-backend-6of6.onrender.com/login', {
             method: "post",
             body: JSON.stringify({  email, password }),
             headers: {
