@@ -9,7 +9,7 @@ let Signup = () => {
     const collectdata = async (e) => {
         e.preventDefault();
         console.log(name, email, password);
-        let result = await fetch("https://portfolio-backend-00ma.onrender.com/register", {
+        let result = await fetch("portfolio-backend-phi-seven.vercel.app/register", {
             method: "post",
             body: JSON.stringify({ name, email, password }),
             headers: {
