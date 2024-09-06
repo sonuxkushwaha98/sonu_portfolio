@@ -8,7 +8,7 @@ let Login=()=>{
    
     const handelLogin= async()=>{
         console.log(email,password);
-        let result = await fetch('http://localhost:8000/login', {
+        let result = await fetch(['https://portfolio-backend-00ma.onrender.com/login',"https://localhost8000/login"], {
             method: "post",
             body: JSON.stringify({  email, password }),
             headers: {
