@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/sonu_portfolio/static/css/main.7c27ba6a.css",
-    "main.js": "/sonu_portfolio/static/js/main.535a3266.js",
+    "main.js": "/sonu_portfolio/static/js/main.4bc2c339.js",
     "static/js/453.ed3810f9.chunk.js": "/sonu_portfolio/static/js/453.ed3810f9.chunk.js",
     "static/media/Weather.png": "/sonu_portfolio/static/media/Weather.dc91f1f9aec1c1516e26.png",
     "static/media/musicPlayer.png": "/sonu_portfolio/static/media/musicPlayer.f10ede895167d036444b.png",
     "static/media/web-dev.png": "/sonu_portfolio/static/media/web-dev.fb375537f9f7d97f3636.png",
     "index.html": "/sonu_portfolio/index.html",
     "main.7c27ba6a.css.map": "/sonu_portfolio/static/css/main.7c27ba6a.css.map",
-    "main.535a3266.js.map": "/sonu_portfolio/static/js/main.535a3266.js.map",
+    "main.4bc2c339.js.map": "/sonu_portfolio/static/js/main.4bc2c339.js.map",
     "453.ed3810f9.chunk.js.map": "/sonu_portfolio/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7c27ba6a.css",
-    "static/js/main.535a3266.js"
+    "static/js/main.4bc2c339.js"
   ]
 }
