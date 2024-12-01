@@ -9,6 +9,7 @@ import Partical from './component/partical';
 import SignUp from './component/SignUp';
 import PrivateComponent from './component/PrivateComponent';
 import Login from './component/Login';
+import Buffer from './component/buffer';
 function App() {
   return (
     <>
@@ -18,19 +19,22 @@ function App() {
           <Partical className="BackgrndPartical" />
           <Routes>
 
-            <Route element={<PrivateComponent/>} >
-            <Route path='/' element={<Home />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/weather-website' element={<Weather_website />} />
-            <Route path='/MusicPlayer' element={<MusicPlayer />} />
-          </Route>
+            <Route element={<PrivateComponent />} >
+              <Route path='/' element={<Home />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/weather-website' element={<Weather_website />} />
+              <Route path='/MusicPlayer' element={<MusicPlayer />} />
+            </Route>
 
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/login' element={<Login />} />
-        </Routes>
-      </Router>
+            <Route path='/signup' element={<SignUp />} />
+            <Route path='/login' element={<Login />} />]
+          </Routes>
+        </Router>
 
-    </div >
+
+
+        {/* <Buffer/> */}
+      </div >
     </>
   );
 }

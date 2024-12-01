@@ -84,6 +84,22 @@
   width: 75%;
   border-radius: 0.4em;
 }
+.password-input {
+  border: 1px solid lightgrey;
+  padding: 1.5em;
+  width: 75%;
+  border-radius: 0.4em;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  height: 2vh;
+  background-color: white;
+}
+.passwordbox{
+  border: none;
+  outline: none;
+  width: 100%;
+}
 .inputBtn {
   padding: 1em;
   width: 20%;
@@ -531,6 +547,23 @@ footer p{
   font-size: 27px;
 }
 
+.Buffer{
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 50vw;
+  bottom: 30vh;
+}
+.innerBuffer{
+  height: 50px;
+  width: 50px;
+  background-color: #ffffff;
+
+}
 @media (max-width: 800px) {
   .navbar {
     height: 60px;
