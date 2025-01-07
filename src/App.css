@@ -564,6 +564,17 @@ footer p{
   background-color: #ffffff;
 
 }
+.loading-message {
+  border: 1px solid #000000;
+  padding: 1em;
+  background-color: #007bffac;
+  color: #000000;
+  border-radius: 0.2em;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 @media (max-width: 800px) {
   .navbar {
     height: 60px;

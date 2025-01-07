@@ -1,62 +1,103 @@
 import React, { useState, useRef } from "react";
-import { Link, useNavigate } from 'react-router-dom'
-import { IoMdEye, IoMdEyeOff } from "react-icons/io"
-let Signup = () => {
-    const [name, setname] = useState("");
-    const [email, setemail] = useState("");
-    const [password, setpassword] = useState("");
-    const [visible, setvisible] = useState(true)
-    const [pending, setpending] = useState(false)
+import { Link, useNavigate } from 'react-router-dom';
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+
+const Signup = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [visible, setVisible] = useState(false);
+    const [pending, setPending] = useState(false);
     const form = useRef();
     const navigate = useNavigate();
-    const collectdata = async (e) => {
+
+    const collectData = async (e) => {
         e.preventDefault();
-        console.log(name, email, password);
-        let result = await fetch("https://portfolio-backend-6of6.onrender.com/register", {
-            method: "post",
-            body: JSON.stringify({ name, email, password }),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-        result = await result.json()
-        console.log(result)
-        localStorage.setItem("user", JSON.stringify(result));
-        setpending(true)
-        if (result) {
-            navigate("/")
-            setpending(false)
-            alert("Sign up successfully")
+        setPending(true); // Start the loading process
+        try {
+            const response = await fetch("https://portfolio-backend-6of6.onrender.com/register", {
+                method: "POST",
+                body: JSON.stringify({ name, email, password }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.message || "Sign-up failed. Please try again.");
+            }
+
+            localStorage.setItem("user", JSON.stringify(result));
+            alert("Sign up successfully!");
+            navigate("/");
+        } catch (error) {
+            alert(error.message || "An error occurred during sign-up.");
+        } finally {
+            setPending(false); // Stop the loading process
         }
+    };
 
-    }
     return (
-        <>
+        <div className="signup">
+            <h2>Sign Up</h2>
+            {pending && <p className="loading-message">Processing your request, please wait...</p>}
+            <form ref={form} onSubmit={collectData}>
+                <label htmlFor="name">Name</label>
+                <input
+                    id="name"
+                    className="inputbox"
+                    type="text"
+                    required
+                    placeholder="Enter your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
 
-            <div className="signup">
-                <h2>Sign up page</h2>
-                <form ref={form} onSubmit={collectdata}>
-                    <label>Name</label>
-                    <input className="inputbox" type="text" required placeholder="Enter your name" value={name}
-                        onChange={(e) => { setname(e.target.value) }} />
-                    <label>Email</label>
-                    <input className="inputbox" type="text" required placeholder="Enter your email" value={email}
-                        onChange={(e) => { setemail(e.target.value) }} />
-                    <label>Create password</label>
-                    <div className="password-input">
-                        <input className="passwordbox" type={visible?"password":"text"} required placeholder="Create your password" value={password}
-                            onChange={(e) => { setpassword(e.target.value) }} />
-                        <div className="eyebtn" onClick={() => { setvisible(!visible) }}>
-                            {visible ? <IoMdEye /> : <IoMdEyeOff />}
-                        </div>
+                <label htmlFor="email">Email</label>
+                <input
+                    id="email"
+                    className="inputbox"
+                    type="email"
+                    required
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+
+                <label htmlFor="password">Create Password</label>
+                <div className="password-input">
+                    <input
+                        id="password"
+                        className="passwordbox"
+                        type={visible ? "text" : "password"}
+                        required
+                        placeholder="Create your password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <div
+                        className="eyebtn"
+                        onClick={() => setVisible(!visible)}
+                        aria-label={visible ? "Hide password" : "Show password"}
+                    >
+                        {visible ? <IoMdEyeOff /> : <IoMdEye />}
                     </div>
+                </div>
 
-                    {/* <button type="submit" disabled={pending?true:false} className="inputBtn" onClick={collectdata}>{pending?"Loading...":"Sign up"}</button> */}
-                    <button type="submit" disabled={pending ? true : false} className="inputBtn" >{pending ? alert("Loading") : "Sign up"}</button>
-                    <p>If allready Sign Up then <Link to='/login' >Login</Link></p>
-                </form>
-            </div>
-        </>
-    )
-}
+                <button
+                    type="submit"
+                    disabled={pending}
+                    className="inputBtn"
+                >
+                    {pending ? "Loading..." : "Sign up"}
+                </button>
+                <p>
+                    Already signed up? <Link to='/login'>Login</Link>
+                </p>
+            </form>
+        </div>
+    );
+};
+
 export default Signup;
